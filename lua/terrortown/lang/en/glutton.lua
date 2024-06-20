@@ -56,6 +56,9 @@ L["desc_event_body_devour"] = "{player} devoured {victim}'s body"
 L["desc_event_glut_rav_starve"] = "{player} starved to death"
 L["title_event_glut_rav_starve"] = "A player starved to death"
 
+-- Player Disconnect
+L["devour_player_disconnected"] = "You can't devour this player since they have disconnected."
+
 --SETTING STRINGS
     --GLUTTON
 L["label_ttt2_eat_bleed_amount"] = "Blood decal spawn rate when eating"
