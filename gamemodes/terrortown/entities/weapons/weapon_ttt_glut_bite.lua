@@ -309,8 +309,14 @@ end
 function SWEP:BeginEat(rag)
   if self:GetState() == BITE_EAT then return end
 
-  self:GetOwner():SetNWBool("HungerGrows", false)
   local ply = CORPSE.GetPlayer(rag)
+  if not IsValid(ply) then
+    LANG.Msg(self:GetOwner(), "devour_player_disconnected", nil, MSG_MSTACK_WARN)
+
+    return
+  end
+
+  self:GetOwner():SetNWBool("HungerGrows", false)
 
   local hunger_ratio = self:GetOwner():GetNWInt("Hunger_Level") / GetConVar("ttt2_glut_hunger"):GetInt()
   local eat_time_base = GetConVar("ttt2_glut_eat_time_base"):GetFloat()
